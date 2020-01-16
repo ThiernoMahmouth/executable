@@ -27,3 +27,8 @@ else:
             #Dans ce cas on a un seul chapitre donne en parametre
             urls.append( urlSite + sys.argv[2] + "/")
 
+#creations des noms de repertoires 
+for url in urls:
+    #pour obtenir le chemin d'un repertoire on enleve la
+    chemins.append( url.split(".com/")[1] )
+
