@@ -5,17 +5,6 @@ import shutil
 from tqdm import tqdm
 from bs4 import BeautifulSoup as bs
 
-def chapitresExist(urls):
-    """
-        Teste l'existence des chapitres donnes en parametres
-    """
-    result= True
-    for url in urls:
-        testChapitre = requests.get(url)
-        if not testChapitre.ok:
-            result = False
-            break
-    return result
 
 def telechargerChapitreManga(url, repertoire):
     """
@@ -86,6 +75,8 @@ if testManga.ok: ### Le manga donne en parametre existe ###
             #pour obtenir le chemin d'un repertoire on enleve le debut jusqu'a ".com/"
             #ainsi le nom du repertoire sera le 2e element de la liste retournee par url.split('.com/')
         telechargerChapitreManga( url, url.split(".com/")[1] )
+
+    print("Téléchargement reussi!")
 else:
     sys.exit("Ce manga n'existe pas!")
 
