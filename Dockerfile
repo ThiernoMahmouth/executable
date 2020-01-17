@@ -10,5 +10,7 @@ RUN pip3 install tqdm
 
 ADD ./download.py /
 
-CMD python3 download.py
+ENTRYPOINT ["python3", "download.py" ]
+
+CMD ["$1" ,"$2"]
 
