@@ -14,3 +14,5 @@ ENTRYPOINT ["python3", "download.py" ]
 
 CMD ["$1" ,"$2"]
 
+VOLUME /Manga
+
